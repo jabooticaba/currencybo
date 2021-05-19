@@ -5,7 +5,7 @@ from extensions import CurrencyConverter, ConvertionException
 
 bot = telebot.TeleBot(TOKEN)
 
-bot.delete_webhook()
+# bot.delete_webhook()
 
 
 @bot.message_handler(commands=['start', 'help'])
