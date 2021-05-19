@@ -5,7 +5,7 @@ from extensions import CurrencyConverter, ConvertionException
 
 bot = telebot.TeleBot(TOKEN)
 
-# bot.delete_webhook() - раскомментить при ошибке вебхука
+bot.delete_webhook()
 
 
 @bot.message_handler(commands=['start', 'help'])
@@ -43,4 +43,4 @@ def convert(message: telebot.types.Message):
         text = f'Цена {amount} {base} в {quote} - {round((total_base * float(amount)), 5)}'
         bot.send_message(message.chat.id, text)
 
-bot.polling()
+bot.polling(none_stop=True)
