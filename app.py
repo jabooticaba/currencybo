@@ -43,4 +43,5 @@ def convert(message: telebot.types.Message):
         text = f'Цена {amount} {base} в {quote} - {round((total_base * float(amount)), 5)}'
         bot.send_message(message.chat.id, text)
 
-bot.polling(none_stop=True)
+bot.polling()
+# bot.polling(none_stop=True)
