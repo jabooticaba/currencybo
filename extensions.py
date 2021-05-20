@@ -29,7 +29,7 @@ class CurrencyConverter:
         except ValueError:
             raise ConvertionException(f'Не удалось обработать количество {amount}')
 
-        r = requests.get(f'https://min-api.cryptocompare.com/data/price?fsym={base_ticker}&tsyms={quote_ticker}')
+        r = requests.get(f'https://min-api.cryptocompare.com/data/price?fsym={base_ticker}&tsyms={quote_ticker}&api_key=ae506baf707ff8b62ed45b3674080fdac43eef756bf91c9a44f8971c91bc3b9e')
         total_base = json.loads(r.content)[keys[quote]]
 
         return total_base
